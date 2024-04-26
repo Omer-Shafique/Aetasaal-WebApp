@@ -1,0 +1,27 @@
+<nav class="sidemenu-nav relative-block ">
+        <div class="logo ">
+                <img src="assets/images/logo-white.png" class="m-auto">
+        </div>
+        <div class="profile-img sec-padding --xsmall ">
+                <img src="{{user.pictureUrl || 'assets/images/user-pic.png'}}">
+                <div class="clicknone">
+                        <p class="fs-small mtpx-5 ">{{user.firstName + ' ' + user.lastName}}</p>
+                        <p class="fs-xsmall">{{user.role}}</p>
+                </div>
+        </div>
+        <ul class="unstyled ripple">
+                <li *ngFor="let menu of menus" [ngClass]="{'active': title === menu.Name}"><a
+                                [routerLink]="menu.Link"><i class="fas {{menu.Icon}} pr-5"></i>
+                                <span class="clicknone">{{menu.Name}}</span>
+                                <!-- <span class="counts-init" *ngIf="menu.count">
+                                        <span class="count">
+                                                {{menuCounts[menu.count]}}
+                                        </span>
+                                </span> -->
+                        </a>
+                </li>
+        </ul>
+        <footer class="sec-padding --xsmall absolute-block">
+                <!-- <p class="fs-xsmall fc-white clicknone">&copy; 2019 Aetasaal.</p> -->
+        </footer>
+</nav>
